@@ -1,0 +1,11 @@
+A simple touch-enabled mobile cheat sheet for Vim.
+
+Vim Liberation uses jQuery, as well as David Kaneda's jQTouch.
+
+More info on jQuery:
+http://jquery.com/
+
+More info on jQTouch:
+http://jqtouch.com/
+
+Vim Liberation is designed primarily for the iPhone and iPod Touch devices, but should support other touch devices as to varying degrees as well.
