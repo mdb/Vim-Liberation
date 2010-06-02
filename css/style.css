@@ -1,0 +1,8 @@
+body.fullscreen #home .info {display:none;}
+#about {padding: 75px 10px 40px; text-shadow:rgba(255, 255, 255, 0.3) 0px -1px 0; font-size:14px; text-align:center;}
+#about h1 {font-size:23px; color:#000;}
+#about p {margin-bottom:20px;}
+#about a {color:#fff; font-weight:bold; text-decoration:none;}
+ul.rounded {font-size:15px;}
+.command-def {padding:130px 10px;}
+.command-def p {font:bold 31px Helvetica; margin-bottom:150px; text-align:center;}

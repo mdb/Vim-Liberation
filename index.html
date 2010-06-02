@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vim Liberation</title>
+
+    <style type="text/css" media="screen">@import "jqtouch/jqtouch.min.css";</style>
+    <style type="text/css" media="screen">@import "css/themes/apple/theme.css";</style>
+    <style type="text/css" media="screen">@import "css/style.css";</style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      var jQT = new $.jQTouch({
+        icon: 'jqtouch.png',
+        addGlossToIcon: false,
+        startupScreen: 'jqt_startup.png',
+        statusBar: 'black',
+        preloadImages: [
+          'css/themes/apple/img/back_button.png',
+          'css/themes/apple/img/back_button_clicked.png',
+          'css/themes/apple/img/button_clicked.png',
+          'css/themes/apple/img/grayButton.png',
+          'css/themes/apple/img/whiteButton.png',
+          'css/themes/apple/img/loading.gif'
+          ]
+      });
+   </script>
+
+  </head>
+
+  <body>
+
+    <div id="about" class="selectable">
+
+    	<h1><strong>About Vim Liberation</strong></h1>
+      <p><a href="http://www.mikeball.us">By Mike Ball</a></p>
+			<p>A simple, touch-enabled mobile cheet sheet site for Vim.</p>
+      <p><em>Vim Liberation is built with HTML5, CSS3, and jQuery. It uses David Kaneda's <a href="http://www.jqtouch.com">jQTouch</a></em></p>
+      <p><a href="#" class="whiteButton goback">Close</a></p>
+
+    </div>
+ 
+    <div id="home" class="current">
+
+      <header class="toolbar">
+        <h1>Vim Liberation</h1>
+        <a class="button slideup" id="infoButton" href="#about">About</a>
+      </header>
+
+      <ul class="rounded">
+        <li class="arrow"><a href="#working-with-files">Working with files</a> <small class="counter">4</small></li>
+        <li class="arrow"><a href="#moving-basics">Moving basics</a> <small class="counter">9</small></li>
+        <li class="arrow"><a href="#moving-inLine">Moving within a line</a> <small class="counter">11</small></li>
+        <li class="arrow"><a href="#moving-throughFile">Moving throughout a file</a> <small class="counter">5</small></li>
+        <li class="arrow"><a href="#editing">Editing text</a> <small class="counter">14</small></li>
+        <li class="arrow"><a href="#visual">Visual mode</a> <small class="counter">4</small></li>
+        <li class="arrow"><a href="#search-replace">Search &amp; Replace</a> <small class="counter">4</small></li>
+      </ul>
+
+    </div>
+
+    <div id="working-with-files">
+
+      <header class="toolbar">
+        <h1>Working with Files</h1>
+        <a class="back" href="#">Home</a>
+      </header>
+
+      <ul class="rounded">
+        <li><a class="slideup" href="#open">Open file</a></li>
+        <li><a class="slideup" href="#save-changes">Save changes</a></li>
+        <li><a class="slideup" href="#exit">Exit vim</a></li>
+				<li><a class="slideup" href="#exit-shebang">Exit vim without saving</a></li>
+      </ul>
+
+    </div>   
+
+   	<div id="open" class="command-def">
+			<p>:e <em>filename</em></p>
+			<a href="#" class="whiteButton goback">Close</a>
+    </div><!--end .command-def-->
+
+    <div id="save-changes" class="command-def">
+			<p>:w</p>
+			<a href="#" class="whiteButton goback">Close</a>
+    </div><!--end .command-def-->
+
+		<div id="exit" class="command-def">
+			<p>:q</p>
+			<a href="#" class="whiteButton goback">Close</a>
+		</div><!--end .command-def-->
+
+		<div id="exit-shebang" class="command-def">
+			<p>:q!</p>
+			<a href="#" class="whiteButton goback">Close</a>
+		</div><!--end .command-def-->
+
+   	<div id="moving-basics">
+
+   		<header class="toolbar">
+        <h1>Moving Basics</h1>
+        <a class="back" href="#">Home</a>
+      </header>
+
+			<ul class="rounded">
+				<li><a class="slideup" href="#up">Up</a></li>
+				<li><a class="slideup" href="#down">Down</a></li>
+				<li><a class="slideup" href="#left">Left</a></li>
+				<li><a class="slideup" href="#right">Right</a></li>
+			</ul>
+
+		</div>
+
+		<div id="up" class="command-def">
+			<p>k</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="down" class="command-def">
+			<p>j</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="left" class="command-def">
+			<p>h</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="right" class="command-def">
+			<p>l</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+		<div id="moving-inLine">
+
+   		<header class="toolbar">
+        <h1>Moving Within a Line</h1>
+        <a class="back" href="#">Home</a>
+      </header>
+
+      <ul class="rounded">
+        <li><a class="slideup" href="#end-word">End of word</a></li>
+ 		    <li><a class="slideup" href="#forward-word">Forward one word</a></li>
+       	<li><a class="slideup" href="#end-wpWord">End of white-space delimited word</a></li>
+        <li><a class="slideup" href="#back-word">Back one word</a></li>
+				<li><a class="slideup" href="#beginning-line">Beginning of line</a></li>
+				<li><a class="slideup" href="#beginning-nwpLine">First non-whitespace character of line</a></li>
+        <li><a class="slideup" href="#end-line">End of line</a></li>
+        <li><a class="slideup" href="#forward-word">Forward one word</a></li>
+        <li><a class="slideup" href="#back-word">Back one word</a></li>
+        <li><a class="slideup" href="#next-sentence">Next sentence</a></li>
+				<li><a class="slideup" href="#back-sentence">Move back one sentence</a></li>
+      </ul>
+
+		</div>
+
+		<div id="end-word" class="command-def">
+			<p>e</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="forward-word" class="command-def">
+			<p>w</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="end-wpWord" class="command-def">
+			<p>E</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="back-word" class="command-def">
+			<p>b</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="beginning-line" class="command-def">
+			<p>0</p>
+			<a hre="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="beginning-nwpLine" class="command-def">
+			<p>^</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="end-line" class="command-def">
+			<p>$</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="next-sentence" class="command-def">
+			<p>)</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="back-sentence" class="command-def">
+			<p>(</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+    <div id="moving-throughFile">
+
+   		<header class="toolbar">
+        <h1>Moving Throughout a File</h1>
+        <a class="back" href="#">Home</a>
+      </header>
+
+			<ul class="rounded">
+				<li><a class="slideup" href="#file-beginning">Beginning of file</a></li>
+				<li><a class="slideup" href="#file-end">End of file</a></li>
+				<li><a class="slideup" href="#screen-top">Top of screen</a></li>
+				<li><a class="slideup" href="#screen-bottom">Bottom of screen</a></li>
+				<li><a class="slideup" href="#screen-middle">Middle of screen</a></li>
+			</ul>
+
+    </div>
+
+		<div id="file-beginning" class="command-def">
+			<p>gg</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end.command-def-->
+
+		<div id="file-end" class="command-def">
+			<p>G</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="screen-top" class="command-def">
+			<p>H</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="screen-middle" class="command-def">
+			<p>H</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="editing">
+			<header class="toolbar">
+        <h1>Inserting &amp; overwriting text</h1>
+        <a class="back" href="#">Home</a>
+      </header>
+
+      <ul class="rounded">
+        <li><a class="slideup" href="#before-cursor">Insert Before Cursor</a></li>
+        <li><a class="slideup" href="#insert-currentLine">Insert to start of current line</a></li>
+        <li><a class="slideup" href="#append">Append after cursor</a></li>
+        <li><a class="slideup" href="#new-lineBelow">Open new line below &amp; insert</a></li>
+        <li><a class="slideup" href="#new-lineAbove">Open new line above &amp; insert</a></li>
+        <li><a class="slideup" href="#change-curLine">Change rest of current line</a></li>
+      	<li><a class="slideup" href="#delete">Delete character under cursor</a></li>
+				<li><a class="slideup" href="#delete-before">Delete character before cursor</a></li>
+				<li><a class="slideup" href="#delete-line">Delete current line</a></li>
+				<li><a class="slideup" href="#yank-line">Yank current line</a></li>
+				<li><a class="slideup" href="#toggle-case">Toggle case of character</a></li>
+				<li><a class="slideup" href="#undo">Undo last change</a></li>
+				<li><a class="slideup" href="#undo-lineChange">Undo changes made to current line</a></li>
+				<li><a class="slideup" href="#redo">Redo</a></li>
+			</ul>
+		</div><!--end #editing navigation-->
+
+		<div id="before-cursor" class="command-def">
+			<p>i</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="insert-currentLine" class="command-def">
+			<p>I</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="append" class="command-def">
+			<p>a</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="new-lineBelow" class="command-def">
+			<p>o</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="new-lineBelow" class="command-def">
+			<p>o</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="new-lineAbove" class="command-def">
+			<p>O</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="change-curLine" class="command-def">
+			<p>C</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="delete" class="command-def">
+			<p>x</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="delete-before" class="command-def">
+			<p>X</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="delete-line" class="command-def">
+			<p>dd <em>or</em> :d</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="yank-line" class="command-def">
+			<p>yy <em>or</em> :y <em>or</em> Y</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="toggle-case" class="command-def">
+			<p>~</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="undo" class="command-def">
+			<p>u</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="undo-lineChange" class="command-def">
+			<p>U</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="redo" class="command-def">
+			<p>Ctrl + R</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="visual">
+			<header class="toolbar">
+        <h1>Visual Mode</h1>
+        <a class="back" href="#">Home</a>
+			</header>
+
+      <ul class="rounded">
+        <li><a class="slideup" href="#start-highlighting">Start highlighting characters</a></li>
+        <li><a class="slideup" href="#start-highlightLines">Start highlighting lines</a></li>
+        <li><a class="slideup" href="#indent">Shift right (indent)</a></li>
+        <li><a class="slideup" href="#de-indent">Shift left (de-indent)</a></li>
+			</ul>
+		</div><!--end #visual navigation-->
+
+		<div id="start-highlighting" class="command-def">
+			<p>v</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="start-highlightLines" class="command-def">
+			<p>V</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="indent" class="command-def">
+			<p>&gt; (V)</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+	
+		<div id="de-indent" class="command-def">
+			<p>&lt; (V)</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="search-replace">
+			<header class="toolbar">
+        <h1>Search &amp; Replace</h1>
+        <a class="back" href="#">Home</a>
+			</header>
+
+      <ul class="rounded">
+        <li><a class="slideup" href="#search-pattern">Search for pattern</a></li>
+        <li><a class="slideup" href="#match-scan">Scan for next match</a></li>
+        <li><a class="slideup" href="#match-scanBack">Scan for previous match</a></li>
+        <li><a class="slideup" href="#search-Andreplace">Replace <em>foo</em> with <em>bar</em> throughout file</a></li>
+			</ul>
+		</div><!--end #search-replace navigation-->
+	
+		<div id="search-pattern" class="command-def">
+			<p>/<em>pattern</em></p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="match-scan" class="command-def">
+			<p>n</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="match-scanBack" class="command-def">
+			<p>N</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+		<div id="search-Andreplace" class="command-def">
+			<p>:&#37;s/foo/bar/g</p>
+			<a href="#" class="whiteButton goback">Close</a>	
+		</div><!--end .command-def-->
+
+  </body>
+</html>
